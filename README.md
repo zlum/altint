@@ -1,0 +1,2 @@
+# altint
+Alternative sized integers
