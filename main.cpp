@@ -15,14 +15,14 @@ int main()
 
     int8_t  test8  = testB;
     int16_t test16 = testB;
-    int24_t test24 = (int24_t)testB;
+    int24_t test24 = int24_t(testB);
     int32_t test32 = testB;
-    int40_t test40 = (int40_t)testB;
-    int48_t test48 = (int48_t)testB;
-    int56_t test56 = (int56_t)testB;
+    int40_t test40 = int40_t(testB);
+    int48_t test48 = int48_t(testB);
+    int56_t test56 = int56_t(testB);
     int64_t test64 = testB;
 
-    cout << "test8  = " << (int)test8 << endl;
+    cout << "test8  = " << int(test8) << endl;
     cout << "test16 = " << test16 << endl;
     cout << "test24 = " << test24 << endl;
     cout << "test32 = " << test32 << endl;

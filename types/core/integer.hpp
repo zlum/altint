@@ -11,9 +11,9 @@ class Integer:
 {
 public:
     inline Int& operator ++();
-    inline Int operator ++(int);
+    inline const Int operator ++(int);
     inline Int& operator --();
-    inline Int operator --(int);
+    inline const Int operator --(int);
 
     inline Int& operator +=(const Int& rhs);
     inline Int& operator -=(const Int& rhs);
@@ -40,7 +40,7 @@ Int& Integer<Int, Signedness, Size>::operator ++()
 }
 
 template<typename Int, typename Signedness, uint8_t Size>
-Int Integer<Int, Signedness, Size>::operator ++(int)
+Int const Integer<Int, Signedness, Size>::operator ++(int)
 {
     Int tmp = *this;
     operator +=(1);
@@ -55,7 +55,7 @@ Int& Integer<Int, Signedness, Size>::operator --()
 }
 
 template<typename Int, typename Signedness, uint8_t Size>
-Int Integer<Int, Signedness, Size>::operator --(int)
+Int const Integer<Int, Signedness, Size>::operator --(int)
 {
     Int tmp = *this;
     operator -=(1);

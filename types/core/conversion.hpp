@@ -42,7 +42,7 @@ Int& Conversion<Int, uint64_t, Size>::operator =(const uint64_t& val)
 template<typename Int, uint8_t Size>
 Conversion<Int, uint64_t, Size>::operator bool() const
 {
-    bool val = 0;
+    bool val = false;
     unsigned(*this) == 0 ? val = false : val = true;
 
     return val;
@@ -130,7 +130,7 @@ Int& Conversion<Int, int64_t, Size>::operator =(const uint64_t& val)
 template<typename Int, uint8_t Size>
 Conversion<Int, int64_t, Size>::operator bool() const
 {
-    bool val = 0;
+    bool val = false;
     int64_t(*this) == 0 ? val = false : val = true;
 
     return val;
@@ -186,8 +186,7 @@ Conversion<Int, int64_t, Size>::operator int64_t() const
 {
     int64_t val = 0;
 
-    if(_byte[Size - 1] & 0x80)
-        memset(&val, 0xFF, sizeof(int64_t));
+    if(_byte[Size - 1] & 0x80) memset(&val, 0xFF, sizeof(int64_t));
 
     memcpy(&val, _byte, Size);
 
